@@ -5,4 +5,12 @@
     "options": ["only automation", "Collaboration between Dev and Ops", "Writing more code", "Replacing developers"],
     "answerIndex": 1,
     "explanation": "DevOps focuses on collaboration and shared responsibility."
+},
+{
+    "id": "Q2",
+    "topic": "Version Control",
+    "question": "What is Git primarily used for?",
+    "options": ["Testing software", "Version Control", "Deploying Applications", "Monitoring systems"],
+    "answerIndex": 1,
+    "explanation": "Git is a distributed version control system used to track changes in code"
 }]
