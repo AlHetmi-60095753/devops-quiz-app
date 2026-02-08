@@ -8,5 +8,7 @@ Each Question includs:
  - answerIndex
  - explanation
 
-## FEATURES
- - Large Question Bank
+## Features
+- Large Question Bank
+- Topic-based quiz selection
+- Interactive scoring and feedback
