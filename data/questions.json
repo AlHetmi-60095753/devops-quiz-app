@@ -1,0 +1,8 @@
+[{
+    "id": "Q1",
+    "topic": "DevOps Culture",
+    "question": "What is DevOps mainly about?",
+    "options": ["only automation", "Collaboration between Dev and Ops", "Writing more code", "Replacing developers"],
+    "answerIndex": 1,
+    "explanation": "DevOps focuses on collaboration and shared responsibility."
+}]
