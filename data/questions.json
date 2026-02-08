@@ -1,0 +1,262 @@
+[
+    {
+      "id": "Q1",
+      "topic": "DevOps Culture",
+      "question": "What is the main goal of DevOps?",
+      "options": [
+        "Replace developers",
+        "Improve collaboration between teams",
+        "Eliminate testing",
+        "Reduce documentation"
+      ],
+      "answerIndex": 1,
+      "explanation": "DevOps focuses on improving collaboration between development and operations teams."
+    },
+    {
+      "id": "Q2",
+      "topic": "Version Control",
+      "question": "What is Git primarily used for?",
+      "options": [
+        "Testing software",
+        "Version control",
+        "Deploying applications",
+        "Monitoring systems"
+      ],
+      "answerIndex": 1,
+      "explanation": "Git is a distributed version control system used to track changes in code."
+    },
+    {
+      "id": "Q3",
+      "topic": "Continuous Integration",
+      "question": "How often should developers integrate their code in CI?",
+      "options": [
+        "Once a month",
+        "Only before release",
+        "Frequently",
+        "Never"
+      ],
+      "answerIndex": 2,
+      "explanation": "CI encourages frequent code integration to detect issues early."
+    },
+    {
+      "id": "Q4",
+      "topic": "Continuous Delivery",
+      "question": "What does Continuous Delivery ensure?",
+      "options": [
+        "Code is always ready to deploy",
+        "Code is never tested",
+        "Only manual releases",
+        "No automation"
+      ],
+      "answerIndex": 0,
+      "explanation": "Continuous Delivery ensures software can be deployed at any time."
+    },
+    {
+      "id": "Q5",
+      "topic": "Continuous Deployment",
+      "question": "What is Continuous Deployment?",
+      "options": [
+        "Manual deployment only",
+        "Automatic deployment after tests pass",
+        "No deployment",
+        "Yearly releases"
+      ],
+      "answerIndex": 1,
+      "explanation": "Continuous Deployment automatically deploys changes after testing."
+    },
+    {
+      "id": "Q6",
+      "topic": "Infrastructure as Code",
+      "question": "What is Infrastructure as Code (IaC)?",
+      "options": [
+        "Manual server setup",
+        "Managing infrastructure using code",
+        "Only hardware management",
+        "Removing servers"
+      ],
+      "answerIndex": 1,
+      "explanation": "IaC uses code to provision and manage infrastructure."
+    },
+    {
+      "id": "Q7",
+      "topic": "Monitoring",
+      "question": "Why is monitoring important in DevOps?",
+      "options": [
+        "To slow systems",
+        "To detect and respond to issues",
+        "To remove logs",
+        "To avoid automation"
+      ],
+      "answerIndex": 1,
+      "explanation": "Monitoring helps teams identify and fix problems quickly."
+    },
+    {
+      "id": "Q8",
+      "topic": "Version Control",
+      "question": "Which command creates a new Git branch?",
+      "options": [
+        "git merge",
+        "git clone",
+        "git checkout -b",
+        "git pull"
+      ],
+      "answerIndex": 2,
+      "explanation": "git checkout -b creates and switches to a new branch."
+    },
+    {
+      "id": "Q9",
+      "topic": "Continuous Integration",
+      "question": "Which tool is commonly used for CI?",
+      "options": [
+        "Jenkins",
+        "Photoshop",
+        "Excel",
+        "Word"
+      ],
+      "answerIndex": 0,
+      "explanation": "Jenkins is a popular Continuous Integration tool."
+    },
+    {
+      "id": "Q10",
+      "topic": "Cloud Computing",
+      "question": "What is a benefit of cloud computing?",
+      "options": [
+        "High upfront cost",
+        "Limited scalability",
+        "On-demand resources",
+        "Manual provisioning"
+      ],
+      "answerIndex": 2,
+      "explanation": "Cloud platforms provide scalable, on-demand resources."
+    },
+    {
+      "id": "Q11",
+      "topic": "DevOps Culture",
+      "question": "Which practice supports DevOps culture?",
+      "options": [
+        "Blame culture",
+        "Information silos",
+        "Shared responsibility",
+        "Isolated teams"
+      ],
+      "answerIndex": 2,
+      "explanation": "DevOps promotes shared responsibility."
+    },
+    {
+      "id": "Q12",
+      "topic": "Testing",
+      "question": "Why is automated testing important?",
+      "options": [
+        "It slows development",
+        "It increases manual work",
+        "It ensures fast feedback",
+        "It removes developers"
+      ],
+      "answerIndex": 2,
+      "explanation": "Automated tests provide quick feedback on code changes."
+    },
+    {
+      "id": "Q13",
+      "topic": "Security",
+      "question": "What is DevSecOps?",
+      "options": [
+        "Ignoring security",
+        "Adding security at the end",
+        "Integrating security into DevOps",
+        "Removing security teams"
+      ],
+      "answerIndex": 2,
+      "explanation": "DevSecOps integrates security into the DevOps process."
+    },
+    {
+      "id": "Q14",
+      "topic": "Version Control",
+      "question": "What does git pull do?",
+      "options": [
+        "Uploads code",
+        "Deletes branches",
+        "Fetches and merges changes",
+        "Creates commits"
+      ],
+      "answerIndex": 2,
+      "explanation": "git pull downloads and merges remote changes."
+    },
+    {
+      "id": "Q15",
+      "topic": "Containers",
+      "question": "What is Docker mainly used for?",
+      "options": [
+        "Virtual machines",
+        "Containerization",
+        "Monitoring",
+        "Testing"
+      ],
+      "answerIndex": 1,
+      "explanation": "Docker is used for containerizing applications."
+    },
+    {
+      "id": "Q16",
+      "topic": "CI/CD",
+      "question": "What does CI/CD stand for?",
+      "options": [
+        "Code Integration/Code Delivery",
+        "Continuous Integration/Continuous Delivery",
+        "Computer Interface/Cloud Deployment",
+        "Central Infrastructure/Core Data"
+      ],
+      "answerIndex": 1,
+      "explanation": "CI/CD stands for Continuous Integration and Continuous Delivery."
+    },
+    {
+      "id": "Q17",
+      "topic": "Planning",
+      "question": "Which tool is commonly used for project planning?",
+      "options": [
+        "Jira",
+        "Docker",
+        "Git",
+        "Jenkins"
+      ],
+      "answerIndex": 0,
+      "explanation": "Jira is widely used for project management."
+    },
+    {
+      "id": "Q18",
+      "topic": "Automation",
+      "question": "Why is automation important in DevOps?",
+      "options": [
+        "To increase errors",
+        "To reduce efficiency",
+        "To improve speed and consistency",
+        "To avoid collaboration"
+      ],
+      "answerIndex": 2,
+      "explanation": "Automation improves speed and reliability."
+    },
+    {
+      "id": "Q19",
+      "topic": "Configuration Management",
+      "question": "Which tool is used for configuration management?",
+      "options": [
+        "Ansible",
+        "PowerPoint",
+        "Notepad",
+        "Chrome"
+      ],
+      "answerIndex": 0,
+      "explanation": "Ansible is used for configuration management."
+    },
+    {
+      "id": "Q20",
+      "topic": "Monitoring",
+      "question": "Which tool is used for system monitoring?",
+      "options": [
+        "Prometheus",
+        "Word",
+        "Paint",
+        "Excel"
+      ],
+      "answerIndex": 0,
+      "explanation": "Prometheus is used for monitoring metrics."
+    }
+  ]
