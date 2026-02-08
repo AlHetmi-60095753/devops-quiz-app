@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DevOps Quiz</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="app__header">
+        <div>
+          <p class="app__eyebrow">DevOps Quiz</p>
+          <h1 class="app__title">Test your DevOps knowledge</h1>
+        </div>
+        <div class="app__meta">
+          <span id="question-counter" class="app__badge">0/0</span>
+          <span id="score" class="app__badge">Score: 0</span>
+        </div>
+      </header>
+
+      <main class="app__main">
+        <section id="start-screen" class="card card--active" aria-live="polite">
+          <h2>Ready to begin?</h2>
+          <p>
+            You will answer a series of DevOps questions. Choose the best
+            option and track your score as you go.
+          </p>
+          <button id="start-btn" class="btn btn--primary" type="button">
+            Start Quiz
+          </button>
+        </section>
+
+        <section id="quiz-screen" class="card" aria-live="polite" aria-hidden="true">
+          <div class="question">
+            <p id="question-text" class="question__text">Question text</p>
+            <ul id="answer-list" class="answers" role="list">
+              <li class="answers__item">
+                <button class="btn btn--option" type="button">Option A</button>
+              </li>
+              <li class="answers__item">
+                <button class="btn btn--option" type="button">Option B</button>
+              </li>
+              <li class="answers__item">
+                <button class="btn btn--option" type="button">Option C</button>
+              </li>
+              <li class="answers__item">
+                <button class="btn btn--option" type="button">Option D</button>
+              </li>
+            </ul>
+          </div>
+
+          <div class="controls">
+            <button id="next-btn" class="btn btn--primary" type="button" disabled>
+              Next Question
+            </button>
+            <button id="restart-btn" class="btn btn--ghost" type="button">
+              Restart
+            </button>
+          </div>
+        </section>
+
+        <section id="result-screen" class="card" aria-live="polite" aria-hidden="true">
+          <h2>Quiz complete</h2>
+          <p id="final-score" class="result__score">You scored 0 out of 0.</p>
+          <p id="final-message" class="result__message">
+            Great effort. Want to try again and improve your score?
+          </p>
+          <button id="play-again-btn" class="btn btn--primary" type="button">
+            Play Again
+          </button>
+        </section>
+      </main>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
