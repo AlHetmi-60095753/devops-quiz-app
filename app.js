@@ -7,18 +7,25 @@
   const nextButton = document.getElementById("next-btn");
   const restartButton = document.getElementById("restart-btn");
   const playAgainButton = document.getElementById("play-again-btn");
+  const topicSelect = document.getElementById("topic-select");
+  const topicHelp = document.getElementById("topic-help");
 
   const questionCounter = document.getElementById("question-counter");
   const scoreBadge = document.getElementById("score");
   const questionText = document.getElementById("question-text");
   const answerList = document.getElementById("answer-list");
+  const feedback = document.getElementById("feedback");
+  const feedbackStatus = document.getElementById("feedback-status");
+  const feedbackExplanation = document.getElementById("feedback-explanation");
   const finalScore = document.getElementById("final-score");
   const finalMessage = document.getElementById("final-message");
 
+  let allQuestions = [];
   let questions = [];
   let currentIndex = 0;
   let score = 0;
   let answered = false;
+  let selectedTopic = "all";
 
   const screenMap = {
     start: startScreen,
@@ -61,8 +68,52 @@
       raw.correctOption ??
       raw.correct_option ??
       null;
+    const topic = raw.topic || raw.category || raw.subject || "General";
+    const explanation =
+      raw.explanation ||
+      raw.rationale ||
+      raw.detail ||
+      raw.reason ||
+      "";
 
-    return { text, options, correct };
+    return { text, options, correct, topic, explanation };
+  };
+
+  const updateTopicOptions = () => {
+    const topics = Array.from(
+      new Set(allQuestions.map((question) => question.topic).filter(Boolean))
+    ).sort();
+    topicSelect.innerHTML = "";
+    const allOption = document.createElement("option");
+    allOption.value = "all";
+    allOption.textContent = "All topics";
+    topicSelect.appendChild(allOption);
+
+    topics.forEach((topic) => {
+      const option = document.createElement("option");
+      option.value = topic;
+      option.textContent = topic;
+      topicSelect.appendChild(option);
+    });
+
+    if (!topics.includes(selectedTopic)) {
+      selectedTopic = "all";
+    }
+    topicSelect.value = selectedTopic;
+  };
+
+  const applyTopicSelection = () => {
+    selectedTopic = topicSelect.value;
+    questions =
+      selectedTopic === "all"
+        ? allQuestions
+        : allQuestions.filter((question) => question.topic === selectedTopic);
+    updateBadges();
+    startButton.disabled = questions.length === 0;
+    topicHelp.textContent =
+      questions.length === 0
+        ? "No questions available for this topic yet."
+        : "Select a topic to focus your quiz.";
   };
 
   const loadQuestions = async () => {
@@ -72,11 +123,12 @@
         throw new Error("Unable to load questions.");
       }
       const data = await response.json();
-      questions = Array.isArray(data) ? data.map(normalizeQuestion) : [];
+      allQuestions = Array.isArray(data) ? data.map(normalizeQuestion) : [];
     } catch (error) {
-      questions = [];
+      allQuestions = [];
     }
-    updateBadges();
+    updateTopicOptions();
+    applyTopicSelection();
   };
 
   const resetState = () => {
@@ -84,6 +136,9 @@
     score = 0;
     answered = false;
     nextButton.disabled = true;
+    feedback.classList.remove("feedback--visible");
+    feedbackStatus.textContent = "";
+    feedbackExplanation.textContent = "";
     updateBadges();
   };
 
@@ -91,6 +146,9 @@
     answered = false;
     nextButton.disabled = true;
     answerList.innerHTML = "";
+    feedback.classList.remove("feedback--visible");
+    feedbackStatus.textContent = "";
+    feedbackExplanation.textContent = "";
 
     if (questions.length === 0) {
       questionText.textContent = "No questions available yet.";
@@ -108,6 +166,8 @@
 
     const currentQuestion = questions[currentIndex];
     questionText.textContent = currentQuestion.text;
+    nextButton.textContent =
+      currentIndex === questions.length - 1 ? "Finish Quiz" : "Next Question";
 
     currentQuestion.options.forEach((option, optionIndex) => {
       const listItem = document.createElement("li");
@@ -160,6 +220,12 @@
       }
     });
 
+    feedbackStatus.textContent = correct ? "Correct!" : "Incorrect.";
+    feedbackExplanation.textContent =
+      currentQuestion.explanation ||
+      "No explanation provided for this question.";
+    feedback.classList.add("feedback--visible");
+
     nextButton.disabled = false;
   };
 
@@ -182,6 +248,10 @@
   };
 
   const startQuiz = () => {
+    applyTopicSelection();
+    if (questions.length === 0) {
+      return;
+    }
     resetState();
     setActiveScreen("quiz");
     renderQuestion();
@@ -204,6 +274,10 @@
     resetState();
   });
   playAgainButton.addEventListener("click", startQuiz);
+  topicSelect.addEventListener("change", () => {
+    applyTopicSelection();
+    resetState();
+  });
 
   loadQuestions().then(() => {
     setActiveScreen("start");

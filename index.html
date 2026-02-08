@@ -27,6 +27,15 @@
             You will answer a series of DevOps questions. Choose the best
             option and track your score as you go.
           </p>
+          <div class="field">
+            <label class="field__label" for="topic-select">Choose a topic</label>
+            <select id="topic-select" class="field__control">
+              <option value="all">All topics</option>
+            </select>
+            <p id="topic-help" class="field__help">
+              Select a topic to focus your quiz.
+            </p>
+          </div>
           <button id="start-btn" class="btn btn--primary" type="button">
             Start Quiz
           </button>
@@ -49,6 +58,10 @@
                 <button class="btn btn--option" type="button">Option D</button>
               </li>
             </ul>
+            <div id="feedback" class="feedback" aria-live="polite">
+              <p id="feedback-status" class="feedback__status"></p>
+              <p id="feedback-explanation" class="feedback__explanation"></p>
+            </div>
           </div>
 
           <div class="controls">
